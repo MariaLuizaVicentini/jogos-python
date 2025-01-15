@@ -1,11 +1,9 @@
-# Esse é o script principal para a seleção de jogos em Python
-# Descrição: permite ao usuário escolher entre o jogo de Adivinhação e Forca. 
 
 import Jogo_Adivinhacao # Importando o script do jogo de adivinhação
 import Jogo_Forca # Importnado o script do jogo da Forca
 
 # Inicializando a função: 
-def jogar_adivinhacao():
+def escolher_jogo():
 
     # Exibindo mensagem de saudação 
     print(36 * "*")
@@ -32,4 +30,4 @@ def jogar_adivinhacao():
 
 # Se o nome do módulo atual for igual a "__main__"
 if __name__ == "__main__":
-    jogar_adivinhacao() # Chamamos a função que executa o jogo 
+    escolher_jogo() # Chamamos a função que executa o jogo 
