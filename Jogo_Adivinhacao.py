@@ -1,6 +1,5 @@
 # Jogo de adivinhação em Python.
 
-
 import random  # biblioteca para gerar números aleatórios
 
 # Inicializando função
