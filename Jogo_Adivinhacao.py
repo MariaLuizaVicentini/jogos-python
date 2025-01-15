@@ -11,7 +11,7 @@ def jogar_adivinhacao():
     print(40 * '*')
 
     # Inicializando e definindo as variáveis
-    num_secreto = random.randint(1, 100)
+    num_secreto = random.randint(1, 101)
     tentativas = 0
     pontos = 1000
 
