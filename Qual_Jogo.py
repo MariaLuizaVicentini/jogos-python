@@ -32,4 +32,4 @@ def jogar_adivinhacao():
 
 # Se o nome do módulo atual for igual a "__main__"
 if __name__ == "__main__":
-    escolher_jogo() # Chamamos a função que executa o jogo 
+    jogar_adivinhacao() # Chamamos a função que executa o jogo 
