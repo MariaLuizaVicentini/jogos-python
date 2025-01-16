@@ -73,3 +73,5 @@ def jogar_adivinhacao():
 if __name__ == "__main__":
     # A função será chamada para inicializar o jogo 
     jogar_adivinhacao()
+
+
