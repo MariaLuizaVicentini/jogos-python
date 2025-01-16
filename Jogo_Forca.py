@@ -1,7 +1,5 @@
 ###  Código em desenvolvimento..... !!!!!###
 
-
-
 import random
 
 # Função principal que controla o jogo da forca
