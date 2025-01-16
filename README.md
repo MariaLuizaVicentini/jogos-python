@@ -4,7 +4,7 @@ Este repositório contém dois jogos simples desenvolvidos em Python: **Adivinha
 
 ## Jogos disponíveis
 - **Jogo de Adivinhação:** O usuário tenta adivinhar um número secreto dentro de um intervalo.
-- **Jogo da Forca:** (ainda a ser implementado)
+- **Jogo da Forca:** (ainda em fase de implementação)
 
 ## Como executar
 1. Certifique-se de ter o Python instalado em sua máquina.
