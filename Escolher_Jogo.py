@@ -2,6 +2,7 @@
 import Jogo_Adivinhacao # Importando o script do jogo de adivinhação
 import Jogo_Forca # Importnado o script do jogo da Forca
 
+
 # Inicializando a função: 
 def escolher_jogo():
 
