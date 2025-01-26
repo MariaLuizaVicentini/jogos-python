@@ -1,14 +1,18 @@
-###  Código em desenvolvimento..... !!!!!###
-
-import random
-
-# Função principal que controla o jogo da forca
 def jogar_forca():
+
+    """Exibir mensagem de saudação"""
     imprime_mensagem_abertura()
+
+    """Sortear palavra secreta"""
     palavra_secreta = carrega_palavra_secreta()
     print(palavra_secreta)
-    letras_acertadas = inicializa_letras_acertadas(palavra_secreta)
-    letras_chutadas = []  # Lista para armazenar letras já chutadas
+
+    """Inicializar lista de underscore para representar a quantidade de letras que a palavra secreta possui"""
+    lista_letras_acertadas = inicializa_letras_acertadas(palavra_secreta)
+    print(lista_letras_acertadas)
+
+    """inicializar lista de letras chutadas pelo usuário"""
+    letras_chutadas = []
 
     enforcou = False
     acertou = False
@@ -16,7 +20,7 @@ def jogar_forca():
     max_erros = 7  # Define o número máximo de erros permitidos
 
     while not enforcou and not acertou:
-        print(letras_acertadas)
+        print(lista_letras_acertadas)
         chute = pede_chute()
 
         if chute in letras_chutadas:
@@ -26,19 +30,19 @@ def jogar_forca():
         letras_chutadas.append(chute)  # Adiciona o chute à lista de letras chutadas
 
         if chute in palavra_secreta:
-            marca_chute_correto(chute, letras_acertadas, palavra_secreta)
+            marca_chute_correto(chute, lista_letras_acertadas, palavra_secreta)
         else:
             erros += 1
             desenha_forca(erros)
 
         enforcou = erros >= max_erros
-        acertou = "_" not in letras_acertadas
+        acertou = "_" not in lista_letras_acertadas
 
     if acertou:
         imprime_mensagem_vencedor()
     else:
         imprime_mensagem_perdedor(palavra_secreta)
-
+    
 
 def imprime_mensagem_abertura():
     print(40 * "*")
@@ -47,26 +51,34 @@ def imprime_mensagem_abertura():
 
 
 def carrega_palavra_secreta():
-    palavras = []
-    with open("texto.txt", "r") as arquivo:
+    palavras = [] # Iicializando lista de palavras 
+    with open("texto.txt", "r") as arquivo: # abrindo o arquivo em modo leitura e renomeando-o 
+        """Para cada LINHA dentro do ARQUIVO:"""
         for linha in arquivo:
+            """Strip remove os espaços da linha e adiciona a linha na lista de palavras"""
             palavras.append(linha.strip())
+            """Random escolhe aleatóriamente um elemento da lista de palavras e retorna ela em letra MAIÚSCULA"""
     return random.choice(palavras).upper()
 
 
 def inicializa_letras_acertadas(palavra_secreta):
-    return ["_" for _ in palavra_secreta]
+    """Separar palavra secreta em uma lista onde cada elemento é uma letra"""
+    palavra_secreta.split()
+    """retorna 1 underscore para cada letra dentro da palavra secreta"""
+    return ["_" for letra in palavra_secreta]
 
 
 def pede_chute():
+    """Retorna uma letra maiuscula sem espaços digita pelo usuario"""
     return input("Qual letra? ").strip().upper()
 
-
-def marca_chute_correto(chute, letras_acertadas, palavra_secreta):
+def marca_chute_correto(chute, lista_letras_acertadas, palavra_secreta):
+    """para cada posição e letra dentro da minha palavra secreta"""
     for index, letra in enumerate(palavra_secreta):
+        """se o chute do usuario for igual a alguma letra da minha palavra secreta"""
         if chute == letra:
-            letras_acertadas[index] = letra
-
+            """lista de letras acertadas recebe acessa a posição da letra e realiza a substituição"""
+            lista_letras_acertadas[index] = letra
 
 def desenha_forca(erros):
     fases = [
