@@ -1,3 +1,5 @@
+import random
+
 def jogar_forca():
 
     """Exibir mensagem de saudação"""
