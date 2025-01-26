@@ -5,11 +5,9 @@ def jogar_forca():
 
     """Sortear palavra secreta"""
     palavra_secreta = carrega_palavra_secreta()
-    print(palavra_secreta)
 
     """Inicializar lista de underscore para representar a quantidade de letras que a palavra secreta possui"""
     lista_letras_acertadas = inicializa_letras_acertadas(palavra_secreta)
-    print(lista_letras_acertadas)
 
     """inicializar lista de letras chutadas pelo usuário"""
     letras_chutadas = []
